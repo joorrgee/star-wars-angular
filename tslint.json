@@ -1,0 +1,67 @@
+{
+    "extends": ["tslint-config-airbnb", "tslint-config-prettier", "tslint-angular"],
+    "rulesDirectory": ["codelyzer"],
+    "rules": {
+        "arrow-return-shorthand": true,
+        "callable-types": true,
+        "deprecation": {
+            "severity": "warn"
+        },
+        "interface-over-type-literal": true,
+        "label-position": true,
+        "member-access": false,
+        "member-ordering": [
+            true,
+            {
+                "order": [
+                    "public-static-field",
+                    "protected-static-field",
+                    "private-static-field",
+                    "public-instance-field",
+                    "protected-instance-field",
+                    "private-instance-field",
+                    "public-static-method",
+                    "protected-static-method",
+                    "private-static-method",
+                    "public-instance-method",
+                    "protected-instance-method",
+                    "private-instance-method"
+                ]
+            }
+        ],
+        "no-arg": true,
+        "no-bitwise": true,
+        "no-duplicate-super": true,
+        "no-duplicate-variable": true,
+        "no-else-after-return": false,
+        "no-empty": false,
+        "no-empty-interface": true,
+        "no-eval": true,
+        "no-increment-decrement": false,
+        "no-inferrable-types": [true, "ignore-params"],
+        "no-misused-new": true,
+        "no-non-null-assertion": true,
+        "no-parameter-reassignment": false,
+        "no-string-literal": true,
+        "no-string-throw": true,
+        "no-switch-case-fall-through": true,
+        "no-unnecessary-initializer": true,
+        "no-unused-expression": true,
+        "object-literal-sort-keys": false,
+        "trailing-comma": false,
+        "unified-signatures": true,
+        "component-class-suffix": [true, "Component", "Page"],
+        "component-selector": ["element", "gr", "kebab-case"],
+        "directive-class-suffix": true,
+        "directive-selector": [true, "attribute", "gr", "camelCase"],
+        "import-blacklist": [true, "rxjs/Rx"],
+        "no-input-rename": true,
+        "no-output-on-prefix": true,
+        "no-output-rename": true,
+        "pipe-prefix": [true, "gr"],
+        "prefer-on-push-component-change-detection": true,
+        "use-life-cycle-interface": true,
+        "use-pipe-transform-interface": true,
+        "template-no-call-expression": true
+    }
+}

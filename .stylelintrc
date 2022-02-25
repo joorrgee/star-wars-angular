@@ -1,0 +1,10 @@
+{
+    "extends": ["stylelint-config-standard", "stylelint-config-primer", "stylelint-config-prettier"],
+    "plugins": ["stylelint-scss"],
+    "rules": {
+        "color-hex-length": "long",
+        "indentation": 4,
+        "max-nesting-depth": 4,
+        "selector-list-comma-newline-after": "always"
+    }
+}
