@@ -1,0 +1,7 @@
+<div class="people">
+    <ng-container *ngIf="people">
+        <ng-container *ngFor="let character of people.results">
+            <swa-character [character]="character"></swa-character>
+        </ng-container>
+    </ng-container>
+</div>

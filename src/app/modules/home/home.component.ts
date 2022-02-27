@@ -1,4 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { People } from 'src/app/model/people';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
     selector: 'app-home',
@@ -6,8 +8,6 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
     styleUrls: ['./home.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeComponent implements OnInit {
-    constructor() {}
+export class HomeComponent {
 
-    ngOnInit(): void {}
 }

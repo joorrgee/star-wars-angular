@@ -26,8 +26,8 @@ export class ApiService {
     }
 
     // PEOPLE
-    public getAllPeople(): Observable<People> {
-        return this.http.get<People>(`${this.baseApiUrl}people/`);
+    public getAllPeople(page = 1): Observable<People> {
+        return this.http.get<People>(`${this.baseApiUrl}people/?page=${page}`);
     }
 
     public getPeople(id: number): Observable<Character> {

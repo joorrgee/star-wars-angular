@@ -1,0 +1,8 @@
+<div class="pagination grid-center">
+    <div class="col-2 grid-center">
+        <span class="pagination__button" [class.pagination__button--disabled]="isFirstPage" (click)="previousPage()"> Previous </span>
+    </div>
+    <div class="col-2 grid-center">
+        <span class="pagination__button" [class.pagination__button--disabled]="isLastPage" (click)="nextPage()"> Next </span>
+    </div>
+</div>

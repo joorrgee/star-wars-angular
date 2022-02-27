@@ -1,0 +1,35 @@
+.pagination {
+    font-size: 20px;
+    color: #ffffff;
+
+    &__button {
+        transition: all 0.5s ease;
+        color: #ffffff;
+        border: 3px solid #ffffff;
+        text-transform: uppercase;
+        line-height: 1;
+        font-size: 20px;
+        background-color: transparent;
+        padding: 10px;
+        outline: none;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+            color: #001f3f;
+            background-color: #fff;
+        }
+
+        &--disabled {
+            opacity: 0.7;
+            cursor: default;
+            color: #aaaaaa;
+            border: 3px solid #aaaaaa;
+
+            &:hover {
+                color: #aaaaaa;
+                background-color: transparent;
+            }
+        }
+    }
+}
