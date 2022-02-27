@@ -1,0 +1,8 @@
+<div class="character-detail">
+    <ng-container *ngFor="let detail of characterDetails">
+        <div class="character-detail__line grid-center">
+            <span class="character-detail__label col-5 grid-middle">{{ detail.label }}:</span>
+            <span class="character-detail__detail col grid-middle">{{ detail.detail }}</span>
+        </div>
+    </ng-container>
+</div>

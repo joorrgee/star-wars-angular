@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { People } from 'src/app/model/people';
+import { Character, People } from 'src/app/model/people';
 import { ApiService } from 'src/app/services/api.service';
 import { PaginationService } from 'src/app/services/pagination.service';
 
@@ -16,6 +16,10 @@ export class PeopleComponent implements OnInit, OnDestroy {
     loading = true;
 
     currentPage: number;
+
+    characterLoaded: Character;
+
+    loadCharacterDetailTimeout: any;
 
     subscriptions = new Subscription();
 
@@ -38,5 +42,18 @@ export class PeopleComponent implements OnInit, OnDestroy {
                 this.changeDetector.markForCheck();
             });
         });
+    }
+
+    loadCharacterDetail(character: Character) {
+        this.loadCharacterDetailTimeout = setTimeout(() => {
+            this.characterLoaded = character;
+            this.changeDetector.detectChanges();
+        }, 200);
+    }
+
+    hideCharacterDetail() {
+        this.characterLoaded = undefined;
+        clearTimeout(this.loadCharacterDetailTimeout);
+        this.changeDetector.detectChanges();
     }
 }

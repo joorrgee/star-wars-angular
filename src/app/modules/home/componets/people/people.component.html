@@ -1,7 +1,16 @@
-<div class="people">
+<div class="people grid-center">
     <ng-container *ngIf="people">
-        <ng-container *ngFor="let character of people.results">
-            <swa-character [character]="character"></swa-character>
-        </ng-container>
+        <div class="col">
+            <ng-container *ngFor="let character of people.results">
+                <swa-character
+                    [character]="character"
+                    (mouseover)="loadCharacterDetail(character)"
+                    (mouseout)="hideCharacterDetail()"
+                ></swa-character>
+            </ng-container>
+        </div>
+        <div class="col">
+            <swa-character-detail [character]="characterLoaded"></swa-character-detail>
+        </div>
     </ng-container>
 </div>

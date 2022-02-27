@@ -10,6 +10,9 @@
     border-radius: 4px;
     z-index: 2;
     cursor: pointer;
+    min-width: 160px;
+    width: 100%;
+    margin: 2px;
 
     &:hover {
         color: #001f3f;
