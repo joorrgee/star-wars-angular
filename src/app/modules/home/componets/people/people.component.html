@@ -5,7 +5,7 @@
                 <swa-character
                     [character]="character"
                     (mouseover)="loadCharacterDetail(character)"
-                    (mouseout)="hideCharacterDetail()"
+                    (click)="openCharacterFilms(character)"
                 ></swa-character>
             </ng-container>
         </div>
@@ -14,3 +14,8 @@
         </div>
     </ng-container>
 </div>
+<ng-container *ngIf="characterToSeeTheFilms">
+    <div class="people__character-films">
+        <swa-character-films [character]="characterToSeeTheFilms" (closeWindow)="closeCharacterFilmsWindow()"></swa-character-films>
+    </div>
+</ng-container>

@@ -13,11 +13,10 @@ import { PaginationService } from 'src/app/services/pagination.service';
 export class PeopleComponent implements OnInit, OnDestroy {
     people: People;
 
-    loading = true;
-
     currentPage: number;
 
     characterLoaded: Character;
+    characterToSeeTheFilms: Character;
 
     loadCharacterDetailTimeout: any;
 
@@ -37,8 +36,8 @@ export class PeopleComponent implements OnInit, OnDestroy {
         return this.paginationService.currentPageSubject.subscribe((currentPage: number) => {
             this.apiService.getAllPeople(currentPage).subscribe((people: People) => {
                 this.people = people;
-                this.loading = false;
                 this.paginationService.checkPaginationStatus(people.previous, people.next);
+                this.characterLoaded = this.people.results[0];
                 this.changeDetector.markForCheck();
             });
         });
@@ -51,9 +50,13 @@ export class PeopleComponent implements OnInit, OnDestroy {
         }, 200);
     }
 
-    hideCharacterDetail() {
-        this.characterLoaded = undefined;
-        clearTimeout(this.loadCharacterDetailTimeout);
-        this.changeDetector.detectChanges();
+    openCharacterFilms(character: Character) {
+        this.characterToSeeTheFilms = character;
+        this.changeDetector.markForCheck();
+    }
+
+    closeCharacterFilmsWindow() {
+        this.characterToSeeTheFilms = null;
+        this.changeDetector.markForCheck();
     }
 }

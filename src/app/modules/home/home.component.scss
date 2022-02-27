@@ -16,7 +16,7 @@
         left: 50%;
         margin-top: -200vh;
         margin-left: -200vw;
-        z-index: 0;
+        z-index: -1;
         animation: spin 500s linear infinite;
         background-size: 240px;
         backface-visibility: visible;
@@ -28,7 +28,7 @@
     }
 
     &__header {
-        font-family: Starjedi;
+        font-family: StarJedi;
     }
 
     &__title {
@@ -39,11 +39,11 @@
 
     &__people-container {
         padding: 20px 0;
-        z-index: 2;
+        z-index: 1;
+        height: 500px;
     }
 
     &__pagination {
         margin-top: 20px;
-        z-index: 2;
     }
 }

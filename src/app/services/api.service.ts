@@ -25,6 +25,10 @@ export class ApiService {
         return this.http.get<Film>(`${this.baseApiUrl}films/${id}/`);
     }
 
+    public getFilmByUrl(url: string): Observable<Film> {
+        return this.http.get<Film>(url);
+    }
+
     // PEOPLE
     public getAllPeople(page = 1): Observable<People> {
         return this.http.get<People>(`${this.baseApiUrl}people/?page=${page}`);

@@ -5,9 +5,10 @@ import { PeopleComponent } from './componets/people/people.component';
 import { HomeComponent } from './home.component';
 import { PaginationComponent } from './componets/pagination/pagination.component';
 import { CharacterDetailComponent } from './componets/character-detail/character-detail.component';
+import { CharacterFilmsComponent } from './componets/character-films/character-films.component';
 
 @NgModule({
-    declarations: [HomeComponent, PeopleComponent, CharacterComponent, PaginationComponent, CharacterDetailComponent],
+    declarations: [HomeComponent, PeopleComponent, CharacterComponent, PaginationComponent, CharacterDetailComponent, CharacterFilmsComponent],
     imports: [CommonModule]
 })
 export class HomeModule {}

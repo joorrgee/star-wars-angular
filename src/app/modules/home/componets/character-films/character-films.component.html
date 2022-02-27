@@ -1,0 +1,41 @@
+<div class="character-films grid-middle-center">
+    <div class="character-films__content col-10">
+        <div class="character-films__header grid">
+            <div class="col-10 grid-center-middle character-films__title" data-push-left="off-1">Films of {{ character.name }}</div>
+            <div class="col-1 grid-right character-films__header-button" (click)="close()">X</div>
+        </div>
+        <div class="character-films__list">
+            <ng-container *ngFor="let film$ of films$">
+                <ng-container *ngIf="film$ | async; let filmValues">
+                    <div class="character-films__film-block grid">
+                        <div class="col-1 grid-middle">
+                            <img src="{{ filmImageUrl[filmValues.episode_id - 1] }}" alt="{{ filmValues.title }}" height="140" />
+                        </div>
+                        <div class="col">
+                            <div class="character-films__line">
+                                <span class="character-films__label">Title: </span>
+                                <span>{{ filmValues.title }}</span>
+                            </div>
+                            <div class="character-films__line">
+                                <span class="character-films__label">Director: </span>
+                                <span>{{ filmValues.director }}</span>
+                            </div>
+                            <div class="character-films__line">
+                                <span class="character-films__label">Producer: </span>
+                                <span>{{ filmValues.producer }}</span>
+                            </div>
+                            <div class="character-films__line">
+                                <span class="character-films__label">Release date: </span>
+                                <span>{{ filmValues.release_date }}</span>
+                            </div>
+                            <div class="character-films__line">
+                                <span class="character-films__label">Opening crawl: </span>
+                                <span>{{ filmValues.opening_crawl }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </ng-container>
+        </div>
+    </div>
+</div>
