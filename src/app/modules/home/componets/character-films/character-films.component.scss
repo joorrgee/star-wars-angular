@@ -44,13 +44,18 @@
     }
 
     &__film-block {
-        border: 1px solid black;
+        border: 1px solid #000000;
         padding: 10px;
         margin: 10px;
     }
 
     &__label {
         font-weight: 900;
+    }
+
+    &__film-title {
+        font-size: 25px;
+        font-weight: 600;
     }
 }
 
