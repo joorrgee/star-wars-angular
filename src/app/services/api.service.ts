@@ -7,12 +7,13 @@ import { Planet, Planets } from '../model/planets';
 import { Specie, Species } from '../model/species';
 import { Starship, Starships } from '../model/starships';
 import { Vehicle, Vehicles } from '../model/vehicles';
+import { environment } from './../../environments/environment';
 
 @Injectable({
     providedIn: 'root'
 })
 export class ApiService {
-    private baseApiUrl = 'https://swapi.dev/api/';
+    private baseApiUrl = environment.baseApiUrl;
 
     constructor(private http: HttpClient) {}
 
