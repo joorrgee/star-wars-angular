@@ -13,9 +13,9 @@
             <swa-character-detail [character]="characterLoaded"></swa-character-detail>
         </div>
     </ng-container>
-    <ng-template *ngIf="loading" #loadingSpinner>
+    <ng-container *ngIf="loading">
         <swa-loading></swa-loading>
-    </ng-template>
+    </ng-container>
 </div>
 <ng-container *ngIf="characterToSeeTheFilms">
     <div class="people__character-films">

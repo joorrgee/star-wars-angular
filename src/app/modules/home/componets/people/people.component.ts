@@ -41,7 +41,7 @@ export class PeopleComponent implements OnInit, OnDestroy {
             this.people = null;
             this.loadingTimeout = setTimeout(() => {
                 this.loading = true;
-                this.changeDetector.markForCheck();
+                this.changeDetector.detectChanges();
             }, 1000);
 
             this.apiService.getAllPeople(currentPage).subscribe((people: People) => {
