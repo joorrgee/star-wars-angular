@@ -20,7 +20,7 @@ export class PeopleComponent implements OnInit, OnDestroy {
 
     loadCharacterDetailTimeout: any;
 
-    loading = true;
+    loading = false;
 
     loadingTimeout: any;
 
@@ -38,10 +38,11 @@ export class PeopleComponent implements OnInit, OnDestroy {
 
     subscribeToCurrentPageSubject(): Subscription {
         return this.paginationService.currentPageSubject.subscribe((currentPage: number) => {
+            this.people = null;
             this.loadingTimeout = setTimeout(() => {
                 this.loading = true;
                 this.changeDetector.markForCheck();
-            }, 500);
+            }, 1000);
 
             this.apiService.getAllPeople(currentPage).subscribe((people: People) => {
                 clearTimeout(this.loadingTimeout);

@@ -1,5 +1,5 @@
 <div class="people grid-center">
-    <ng-container *ngIf="!loading; else loadingSpinner">
+    <ng-container *ngIf="people">
         <div class="col">
             <ng-container *ngFor="let character of people.results">
                 <swa-character
@@ -13,7 +13,7 @@
             <swa-character-detail [character]="characterLoaded"></swa-character-detail>
         </div>
     </ng-container>
-    <ng-template #loadingSpinner>
+    <ng-template *ngIf="loading" #loadingSpinner>
         <swa-loading></swa-loading>
     </ng-template>
 </div>
