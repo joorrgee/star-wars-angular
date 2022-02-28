@@ -1,6 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { People } from 'src/app/model/people';
-import { ApiService } from 'src/app/services/api.service';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'app-home',
@@ -8,6 +6,4 @@ import { ApiService } from 'src/app/services/api.service';
     styleUrls: ['./home.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeComponent {
-
-}
+export class HomeComponent {}

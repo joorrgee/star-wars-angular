@@ -20,6 +20,10 @@ export class PeopleComponent implements OnInit, OnDestroy {
 
     loadCharacterDetailTimeout: any;
 
+    loading = true;
+
+    loadingTimeout: any;
+
     subscriptions = new Subscription();
 
     constructor(private apiService: ApiService, private changeDetector: ChangeDetectorRef, private paginationService: PaginationService) {}
@@ -34,11 +38,18 @@ export class PeopleComponent implements OnInit, OnDestroy {
 
     subscribeToCurrentPageSubject(): Subscription {
         return this.paginationService.currentPageSubject.subscribe((currentPage: number) => {
+            this.loadingTimeout = setTimeout(() => {
+                this.loading = true;
+                this.changeDetector.markForCheck();
+            }, 500);
+
             this.apiService.getAllPeople(currentPage).subscribe((people: People) => {
+                clearTimeout(this.loadingTimeout);
                 this.people = people;
                 this.paginationService.checkPaginationStatus(people.previous, people.next);
                 this.characterLoaded = this.people.results[0];
-                this.changeDetector.markForCheck();
+                this.loading = false;
+                this.changeDetector.detectChanges();
             });
         });
     }

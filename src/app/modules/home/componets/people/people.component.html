@@ -1,5 +1,5 @@
 <div class="people grid-center">
-    <ng-container *ngIf="people">
+    <ng-container *ngIf="!loading; else loadingSpinner">
         <div class="col">
             <ng-container *ngFor="let character of people.results">
                 <swa-character
@@ -13,6 +13,9 @@
             <swa-character-detail [character]="characterLoaded"></swa-character-detail>
         </div>
     </ng-container>
+    <ng-template #loadingSpinner>
+        <swa-loading></swa-loading>
+    </ng-template>
 </div>
 <ng-container *ngIf="characterToSeeTheFilms">
     <div class="people__character-films">
