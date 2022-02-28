@@ -1,20 +1,25 @@
 .character-films {
     position: absolute;
-    width: 100vw;
-    height: 100vh;
+    width: 80vw;
+    height: 80vh;
     z-index: 2;
-    background-color: #000000cc;
-    top: 0;
-    left: 0;
+    background-color: #aaaaaa;
+    top: 10vh;
+    left: 10vw;
+    border-radius: 20px;
+    border: 5px solid #aaaaaa;
+    animation: fade 0.75s ease-in;
 
     &__content {
-        background-color: #aaaaaa;
-        border-radius: 20px;
-        height: 80vh;
+        width: 79vw;
+        height: 79vh;
+        overflow-y: auto;
+        border-radius: 15px;
     }
 
     &__header {
         height: 70px;
+        width: 100%;
     }
 
     &__title {
@@ -38,17 +43,22 @@
         }
     }
 
-    &__list {
-        overflow-y: scroll;
-    }
-
     &__film-block {
         border: 1px solid black;
         padding: 10px;
-        margin: 10px 0;
+        margin: 10px;
     }
 
     &__label {
         font-weight: 900;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }

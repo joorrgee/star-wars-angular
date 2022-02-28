@@ -1,10 +1,10 @@
-<div class="character-films grid-middle-center">
-    <div class="character-films__content col-10">
+<div class="character-films grid-center">
+    <div class="character-films__content">
         <div class="character-films__header grid">
             <div class="col-10 grid-center-middle character-films__title" data-push-left="off-1">Films of {{ character.name }}</div>
             <div class="col-1 grid-right character-films__header-button" (click)="close()">X</div>
         </div>
-        <div class="character-films__list">
+        <div class="character-films__list col-12">
             <ng-container *ngFor="let film$ of films$">
                 <ng-container *ngIf="film$ | async; let filmValues">
                     <div class="character-films__film-block grid">
