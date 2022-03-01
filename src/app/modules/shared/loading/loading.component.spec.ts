@@ -20,4 +20,8 @@ describe('LoadingComponent', () => {
     it('should create', () => {
         expect(component).toBeTruthy();
     });
+
+    it('should has a class named as loading', () => {
+        expect(fixture.nativeElement.getElementsByClassName('loading').length).toBeGreaterThan(0);
+    });
 });

@@ -20,4 +20,8 @@ describe('PaginationComponent', () => {
     it('should create', () => {
         expect(component).toBeTruthy();
     });
+
+    it('should has a class named as pagination', () => {
+        expect(fixture.nativeElement.getElementsByClassName('pagination').length).toBeGreaterThan(0);
+    });
 });

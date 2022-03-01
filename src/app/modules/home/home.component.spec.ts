@@ -1,4 +1,6 @@
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { PaginationComponent } from '../shared/pagination/pagination.component';
 import { HomeComponent } from './home.component';
 
 describe('HomeComponent', () => {
@@ -7,7 +9,7 @@ describe('HomeComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [HomeComponent]
+            declarations: [HomeComponent, PaginationComponent, MockPeopleComponent]
         }).compileComponents();
     });
 
@@ -20,4 +22,18 @@ describe('HomeComponent', () => {
     it('should create', () => {
         expect(component).toBeTruthy();
     });
+
+    it('should has a class named as home', () => {
+        expect(fixture.nativeElement.getElementsByClassName('home').length).toBeGreaterThan(0);
+    });
+
+    it('should has a title', () => {
+        expect(fixture.nativeElement.getElementsByClassName('home__title').length).toBeGreaterThan(0);
+    });
 });
+@Component({
+    selector: 'swa-people',
+    template: '',
+    changeDetection: ChangeDetectionStrategy.OnPush
+})
+class MockPeopleComponent {}

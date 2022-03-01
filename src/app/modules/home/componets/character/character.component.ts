@@ -7,10 +7,6 @@ import { Character } from 'src/app/model/people';
     styleUrls: ['./character.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CharacterComponent implements OnInit {
+export class CharacterComponent {
     @Input() character: Character;
-
-    constructor() {}
-
-    ngOnInit(): void {}
 }

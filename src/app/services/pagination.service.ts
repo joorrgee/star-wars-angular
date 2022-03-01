@@ -14,8 +14,6 @@ export class PaginationService {
     isFirstPageSubject: BehaviorSubject<boolean> = new BehaviorSubject(this.isFirstPage);
     isLastPageSubject: BehaviorSubject<boolean> = new BehaviorSubject(this.isLastPage);
 
-    constructor() {}
-
     previousPage() {
         if (!this.isFirstPage) {
             this.page--;
